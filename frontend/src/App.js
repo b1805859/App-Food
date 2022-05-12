@@ -34,6 +34,7 @@ import OrderListScreen from './screens/OrderListScreen';
 import UserListScreen from './screens/UserListScreen';
 import UserEditScreen from './screens/UserEditScreen';
 import MapScreen from './screens/MapScreen';
+import Footer from './components/Footer';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -85,7 +86,7 @@ function App() {
               </Button>
 
               <LinkContainer to="/">
-                <Navbar.Brand>amazona</Navbar.Brand>
+                <Navbar.Brand>&nbsp;&nbsp;Stave Food</Navbar.Brand>
               </LinkContainer>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
@@ -265,9 +266,10 @@ function App() {
             </Routes>
           </Container>
         </main>
-        <footer>
+        {/* <footer>
           <div className="text-center">All rights reserved</div>
-        </footer>
+        </footer> */}
+        <Footer />
       </div>
     </BrowserRouter>
   );

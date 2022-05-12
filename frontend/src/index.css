@@ -57,6 +57,10 @@ main {
   color: #f08000;
 }
 
+.navbar-dark {
+  background-color: #d1411e !important;
+}
+
 /* sidebar */
 .navbar-brand {
   font-weight: bold;
@@ -124,4 +128,70 @@ main {
 }
 button.thumbnail {
   padding: 0;
+}
+
+/* fix bootstrap */
+.nav-link {
+  color: #fff !important;
+}
+
+.footer {
+  margin-top: 140px;
+  background-color: #222;
+  height: calc(100vh - 100px);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.footer__item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.footer__item img {
+  width: 500px;
+  height: calc(100vh - 100px);
+}
+
+.footer__item__card {
+  flex: 1;
+  padding: 0 20px;
+  color: #d3d3d3;
+}
+
+.footer__item__card__motton {
+  margin-top: 2rem;
+  text-transform: uppercase;
+  color: #d3d3d3;
+  font-size: 2.3rem;
+}
+
+.footer__item__card__title {
+  margin: 1.5rem 0;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  color: #b7903c;
+}
+
+.footer__item__card__text {
+  margin-bottom: 20px;
+  line-height: 2rem;
+  font-size: 1.3rem;
+}
+
+.footer__item__card__icons {
+  display: flex;
+}
+
+.footer__item__card__icons__icon {
+  display: inherit;
+  padding-right: 25px;
+  font-size: 1.6rem;
+}
+
+.footer__item__card__icons__icon:hover {
+  color: #d1411e;
 }
