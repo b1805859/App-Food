@@ -2,12 +2,16 @@ import { useEffect, useReducer } from "react";
 import axios from "axios";
 import logger from "use-reducer-logger";
 import Row from "react-bootstrap/Row";
+import Carousel from "react-bootstrap/Carousel";
 import Col from "react-bootstrap/Col";
 import Product from "../components/Product";
 import { Helmet } from "react-helmet-async";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
-// import data from '../data';
+
+import Banner1 from "../assets/img/banner1.jpg";
+import Banner2 from "../assets/img/banner2.jpg";
+import Banner3 from "../assets/img/banner3.jpg";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -44,10 +48,26 @@ function HomeScreen() {
     fetchData();
   }, []);
   return (
-    <div>
+    <div className="homepage">
       <Helmet>
         <title>Italian Food | Stave</title>
       </Helmet>
+      {/* Banner */}
+      <Carousel className="banner" fade>
+        <Carousel.Item>
+          <img className="d-block w-100" src={Banner1} alt="First slide" />
+          <Carousel.Caption></Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img className="d-block w-100" src={Banner2} alt="Second slide" />
+          <Carousel.Caption></Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img className="d-block w-100" src={Banner3} alt="Third slide" />
+          <Carousel.Caption></Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
+      {/* end banner */}
       <div className="boxtext">
         <div className="title">Welcome to Stave!</div>
         <div className="subtitle">Family Cafe & Pizzeria</div>

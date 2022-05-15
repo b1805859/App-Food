@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Port+Lligat+Slab&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Port+Lligat+Slab&display=swap");
 
 * {
   padding: 0;
@@ -13,13 +13,15 @@
 
 body {
   margin: 0;
-  font-family: 'Port Lligat Slab', serif;
+  font-family: "Port Lligat Slab", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 .site-container {
   min-height: 100vh;
 }
+
 main {
   flex: 1;
   font-size: 15px;
@@ -29,6 +31,10 @@ a {
   list-style-type: none;
   text-decoration: none;
   color: unset;
+}
+
+ul, li {
+  list-style-type: none;
 }
 
 .btn-primary,
@@ -92,20 +98,21 @@ a {
   font-size: 4rem;
   font-weight: bold;
   text-transform: uppercase;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-family: "Yanone Kaffeesatz", sans-serif;
 }
 
 .subtitle {
   font-size: 1.6rem;
-  font-family: 'Leckerli One', cursive;
+  font-family: "Leckerli One", cursive;
   color: #d1411e;
 }
 
 .smalltext {
   margin: 0 400px;
   margin-top: 1.5rem;
+  margin-bottom: 2rem;
   font-size: 1.1rem;
-  font-family: 'Port Lligat Slab', serif;
+  font-family: "Port Lligat Slab", serif;
 }
 
 /* sidebar */
@@ -134,7 +141,7 @@ a {
   font-weight: bold;
 }
 
-/* logo */ 
+/* logo */
 
 .logo-image {
   width: 100px;
@@ -187,9 +194,11 @@ button.thumbnail {
 .nav-link {
   color: #fff !important;
   font-size: 1.8rem;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-family: "Yanone Kaffeesatz", sans-serif;
   font-weight: 500;
 }
+
+/* footer */
 
 .footer {
   margin-top: 140px;
@@ -221,7 +230,7 @@ button.thumbnail {
 .footer__item__card__motton {
   margin-top: 2rem;
   text-transform: uppercase;
-  font-family: 'Leckerli One', cursive;
+  font-family: "Leckerli One", cursive;
   color: #d3d3d3;
   font-size: 2.3rem;
 }
@@ -230,7 +239,7 @@ button.thumbnail {
   margin: 1.5rem 0;
   font-size: 2rem;
   text-transform: uppercase;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-family: "Yanone Kaffeesatz", sans-serif;
   color: #b7903c;
 }
 
@@ -256,10 +265,89 @@ button.thumbnail {
 
 /* search box */
 
+.body-card {
+  height: calc(100vh - 200px);
+}
+
 #button-search {
   border: none;
+  border: 2px solid #fff;
+}
+
+#button-search:hover {
+  background-color: #d1411e;
 }
 
 .nav-search {
-  width: 300px; 
+  width: 300px;
+}
+
+/* products card */
+
+.product-title {
+  height: 3rem;
+  font-family: "Leckerli One", cursive;
+  color: #d1411e;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+.product-box {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.5rem 0.5rem;
+  margin-bottom: 0;
+}
+
+.product-price {
+  font-family: "M PUSH Rounded 1c", sans-serif;
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+
+.card-img-top {
+  height: 200px;
+}
+
+.btn-add {
+  border: none;
+  width: 8rem;
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+
+.btn-add-cart:hover {
+  background-color: #d1411e;
+}
+
+/* category */
+
+.category-img {
+  width: 40px;
+  margin-right: 0.5rem;
+}
+
+.category-card {
+  background-color: #404040;
+}
+
+.category-title {
+  margin-top: 5px;
+  font-size: 2rem;
+  color: #d1411e;
+  display: flex;
+  align-items: center;
+}
+
+/* banner */
+
+.banner {
+  top: -1rem;
+  /* left: 0rem; */
+  /* width: 100vw; */
+}
+
+.homepage {
+  padding: 0;
+  margin: 0;
 }

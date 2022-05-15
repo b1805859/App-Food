@@ -37,6 +37,8 @@ import MapScreen from "./screens/MapScreen";
 import Footer from "./components/Footer";
 
 import Logo from "./assets/img/logo.png";
+import Pizza from "./assets/img/pizza.png";
+
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -148,15 +150,17 @@ function App() {
             </Container>
           </Navbar>
         </header>
+
         <div
           className={
             sidebarIsOpen
-              ? "active-nav side-navbar d-flex justify-content-between flex-wrap flex-column"
+              ? "active-nav side-navbar d-flex justify-content-between flex-wrap flex-column category-card"
               : "side-navbar d-flex justify-content-between flex-wrap flex-column"
           }
         >
           <Nav className="flex-column text-white w-100 p-2">
-            <Nav.Item>
+            <Nav.Item className="category-title">
+              <img className="category-img" src={Pizza} alt="" />
               <strong>Categories</strong>
             </Nav.Item>
             {categories.map((category) => (
