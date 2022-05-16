@@ -25,6 +25,7 @@ body {
 main {
   flex: 1;
   font-size: 15px;
+  margin-top: 5.5rem;
 }
 
 a {
@@ -85,6 +86,14 @@ li {
 
 .navbar-dark {
   background-color: #d1411e !important;
+}
+
+/* header */
+
+.header {
+  width: 100%;
+  position: fixed;
+  z-index: 99;
 }
 
 /* Home page */
