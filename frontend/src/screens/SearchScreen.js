@@ -127,6 +127,9 @@ export default function SearchScreen() {
     const sortOrder = filter.order || order;
     return `/search?category=${filterCategory}&query=${filterQuery}&price=${filterPrice}&rating=${filterRating}&order=${sortOrder}&page=${filterPage}`;
   };
+
+  window.scroll(0, 0);
+
   return (
     <div className="body-card">
       <Helmet>

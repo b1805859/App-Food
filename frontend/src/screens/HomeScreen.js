@@ -12,6 +12,7 @@ import MessageBox from "../components/MessageBox";
 import Banner1 from "../assets/img/banner1.jpg";
 import Banner2 from "../assets/img/banner2.jpg";
 import Banner3 from "../assets/img/banner3.jpg";
+import { Link } from "react-router-dom";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -84,13 +85,21 @@ function HomeScreen() {
           <MessageBox variant="danger">{error}</MessageBox>
         ) : (
           <Row>
-            {products.map((product) => (
+            {products.slice(0, 8).map((product) => (
               <Col key={product.slug} sm={6} md={4} lg={3} className="mb-3">
                 <Product product={product}></Product>
               </Col>
             ))}
           </Row>
         )}
+        <div className="btn-product">
+          <Link className="a-product" to={"/search"}>
+            <span>View all products</span>
+            <span>
+              <i class="fas fa-angle-right"></i>
+            </span>
+          </Link>
+        </div>
       </div>
     </div>
   );

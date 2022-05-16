@@ -33,7 +33,8 @@ a {
   color: unset;
 }
 
-ul, li {
+ul,
+li {
   list-style-type: none;
 }
 
@@ -271,7 +272,7 @@ button.thumbnail {
 
 #button-search {
   border: none;
-  border: 2px solid #fff;
+  border: 1px solid #fff;
 }
 
 #button-search:hover {
@@ -305,8 +306,24 @@ button.thumbnail {
   font-weight: bolder;
 }
 
+/* product hover image */
+/* zoom in image */
+
 .card-img-top {
   height: 200px;
+  width: 100%;
+  overflow: hidden;
+}
+.zoomin img {
+  height: 200px;
+  width: 100%;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.zoomin img:hover {
+    transform: scale(1.2);
 }
 
 .btn-add {
@@ -316,8 +333,72 @@ button.thumbnail {
   font-weight: bolder;
 }
 
-.btn-add-cart:hover {
+.btn-add:hover {
   background-color: #d1411e;
+}
+
+/* product button hover */
+
+.btn-product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.btn-product span:hover {
+  color: #fff;
+}
+
+.a-product{
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  text-decoration: none;
+  color: #333;
+  border: 2px solid #d1411e;
+  border-radius: 10px;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all .5s;
+}
+
+.a-product span{
+  position: relative;
+  z-index: 2;
+  /* font-family: "Yanone Kaffeesatz", sans-serif; */
+  /* font-size: 1.2rem; */
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.a-product span:hover {
+  color: #fff;
+}
+
+.a-product:after{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #d1411e;
+  border-radius: 5px;
+  color: #fff;
+  transition: all .5s;
+}
+
+.a-product:hover{
+  color: #fff;
+}
+
+.a-product:hover:after{
+  width: 100%;
+  color: #fff;
 }
 
 /* category */
@@ -350,4 +431,105 @@ button.thumbnail {
 .homepage {
   padding: 0;
   margin: 0;
+}
+
+/* signin - signup */
+
+.signin-card {
+  width: 80%;
+  min-height: 500px;
+  max-height: auto;
+  /* background-color: #404040; */
+  /* border: 1px solid #a0a0a0; */
+  background-image: linear-gradient(-225deg, #ddd 50%, #fff 50%);
+  padding: 2rem;
+  border-radius: 10px;
+  margin-top: 5rem;
+  box-shadow: rgba(45, 46, 46, 0.2) 0px 8px 24px;
+}
+
+.signin-title {
+  width: 100%;
+  text-align: center;
+  font-family: "Yanone Kaffeesatz", sans-serif;
+}
+
+.signin-input {
+  outline: none;
+  border: none;
+  box-shadow: rgba(45, 46, 46, 0.2) 0px 8px 24px;
+}
+
+.signin-subtitle {
+  font-size: 1.2rem;
+}
+
+.btn-signin {
+  width: 100%;
+  border: none;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(to right, #d11e54, #d19a1e, #d1411e);
+  box-shadow: rgba(45, 46, 46, 0.2) 0px 8px 24px;
+}
+
+.btn-signin:hover {
+  background: linear-gradient(to left, #d11e54, #d19a1e, #d1411e);
+  cursor: pointer;
+}
+
+.signin-smalltext {
+  font-size: 1rem;
+  color: #565656;
+}
+
+.signin-link:hover {
+  color: #d1411e;
+}
+
+/* cart */
+
+.btn-cart {
+  width: 100%;
+  border: none;
+}
+
+.btn-cart:hover {
+  background-color: #d1411e;
+}
+
+.icon-cart {
+  font-size: 2.5rem;
+}
+
+.cart-link:hover {
+  color: #d1411e;
+}
+
+
+/* product details */
+
+.product-title-detail {
+  font-size: 1.8rem;
+}
+
+.product-subtitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.product-desc {
+  font-size: 1rem;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.product-image {
+  width: 100%;
+  /* border: 2px solid #ccc; */
+  border-radius: 10px;
+  box-shadow: rgba(45, 46, 46, 0.2) 0px 8px 24px;
 }
