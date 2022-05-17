@@ -1,26 +1,26 @@
-import { useEffect, useReducer, useState } from 'react';
-import axios from 'axios';
-import logger from 'use-reducer-logger';
-import Row from 'react-bootstrap/Row';
-import Carousel from 'react-bootstrap/Carousel';
-import Col from 'react-bootstrap/Col';
-import Product from '../components/Product';
-import { Helmet } from 'react-helmet-async';
-import LoadingBox from '../components/LoadingBox';
-import MessageBox from '../components/MessageBox';
+import { useEffect, useReducer, useState } from "react";
+import axios from "axios";
+import logger from "use-reducer-logger";
+import Row from "react-bootstrap/Row";
+import Carousel from "react-bootstrap/Carousel";
+import Col from "react-bootstrap/Col";
+import Product from "../components/Product";
+import { Helmet } from "react-helmet-async";
+import LoadingBox from "../components/LoadingBox";
+import MessageBox from "../components/MessageBox";
 
-import Banner1 from '../assets/img/banner1.jpg';
-import Banner2 from '../assets/img/banner2.jpg';
-import Banner3 from '../assets/img/banner3.jpg';
-import { Link } from 'react-router-dom';
+import Banner1 from "../assets/img/banner1.jpg";
+import Banner2 from "../assets/img/banner2.jpg";
+import Banner3 from "../assets/img/banner3.jpg";
+import { Link } from "react-router-dom";
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case 'FETCH_REQUEST':
+    case "FETCH_REQUEST":
       return { ...state, loading: true };
-    case 'FETCH_SUCCESS':
+    case "FETCH_SUCCESS":
       return { ...state, products: action.payload, loading: false };
-    case 'FETCH_FAIL':
+    case "FETCH_FAIL":
       return { ...state, loading: false, error: action.payload };
     default:
       return state;
@@ -31,16 +31,16 @@ function HomeScreen() {
   const [{ loading, error, products }, dispatch] = useReducer(logger(reducer), {
     products: [],
     loading: true,
-    error: '',
+    error: "",
   });
   useEffect(() => {
     const fetchData = async () => {
-      dispatch({ type: 'FETCH_REQUEST' });
+      dispatch({ type: "FETCH_REQUEST" });
       try {
-        const result = await axios.get('/api/products');
-        dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
+        const result = await axios.get("/api/products");
+        dispatch({ type: "FETCH_SUCCESS", payload: result.data });
       } catch (err) {
-        dispatch({ type: 'FETCH_FAIL', payload: err.message });
+        dispatch({ type: "FETCH_FAIL", payload: err.message });
       }
 
       // setProducts(result.data);
@@ -48,12 +48,13 @@ function HomeScreen() {
 
     fetchData();
   }, []);
-  const [showbtn, setShowBtn] = useState(true);
-  const [showcol, setShowCol] = useState(false);
-  const handleShow = () => {
-    setShowBtn(!showbtn);
-    setShowCol(!showcol);
-  };
+  // const [showbtn, setShowBtn] = useState(true);
+  // const [showcol, setShowCol] = useState(false);
+  // const handleShow = () => {
+  //   setShowBtn(!showbtn);
+  //   setShowCol(!showcol);
+  // };
+  
   return (
     <div className="homepage">
       <Helmet>
@@ -96,24 +97,16 @@ function HomeScreen() {
                 <Product product={product}></Product>
               </Col>
             ))}
-            {showcol &&
-              products.slice(8, products.length).map((product) => (
-                <Col key={product.slug} sm={6} md={4} lg={3} className="mb-3">
-                  <Product product={product}></Product>
-                </Col>
-              ))}
           </Row>
         )}
-        {showbtn && (
-          <div className="btn-product">
-            <button className="a-product" onClick={handleShow}>
-              <span>View all products</span>
-              <span>
-                <i class="fas fa-angle-right"></i>
-              </span>
-            </button>
-          </div>
-        )}
+        <div className="btn-product">
+          <Link to={"/search"} className="a-product">
+            <span>View all products</span>
+            <span>
+              <i class="fas fa-angle-right"></i>
+            </span>
+          </Link>
+        </div>
       </div>
     </div>
   );

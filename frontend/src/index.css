@@ -96,6 +96,16 @@ li {
   z-index: 99;
 }
 
+.header-scroll {
+  width: 84%;
+  position: fixed;
+  z-index: 99;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
 /* Home page */
 
 .boxtext {
@@ -147,8 +157,32 @@ li {
 .active-nav {
   left: 0;
 }
+
+/* search srceen */
+
 .text-bold {
   font-weight: bold;
+}
+
+.bgcolor-text,
+.bgcolor-text:hover {
+  color: #fff;
+  background-color: #d1411e;
+}
+
+.bgcolor-texth:hover {
+  color: #fff;
+  background-color: #d1421e6b;
+}
+
+.color-text,
+.color-text:hover {
+  color: #d1411e;
+}
+
+.color-texth:hover,
+.color-texth:focus {
+  color: #d1421e6b;
 }
 
 /* logo */
@@ -276,7 +310,7 @@ button.thumbnail {
 /* search box */
 
 .body-card {
-  height: calc(100vh - 200px);
+  min-height: 100vh;
 }
 
 #button-search {
@@ -332,7 +366,7 @@ button.thumbnail {
   transition: all 1s ease;
 }
 .zoomin img:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .btn-add {
@@ -359,7 +393,7 @@ button.thumbnail {
   color: #fff;
 }
 
-.a-product{
+.a-product {
   width: 200px;
   height: 40px;
   line-height: 40px;
@@ -370,10 +404,10 @@ button.thumbnail {
   letter-spacing: 2px;
   text-align: center;
   position: relative;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
-.a-product span{
+.a-product span {
   position: relative;
   z-index: 2;
   /* font-family: "Yanone Kaffeesatz", sans-serif; */
@@ -388,7 +422,7 @@ button.thumbnail {
   color: #fff;
 }
 
-.a-product:after{
+.a-product:after {
   position: absolute;
   content: "";
   top: 0;
@@ -398,14 +432,14 @@ button.thumbnail {
   background: #d1411e;
   border-radius: 5px;
   color: #fff;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
-.a-product:hover{
+.a-product:hover {
   color: #fff;
 }
 
-.a-product:hover:after{
+.a-product:hover:after {
   width: 100%;
   color: #fff;
 }
@@ -419,6 +453,7 @@ button.thumbnail {
 
 .category-card {
   background-color: #404040;
+  position: fixed;
 }
 
 .category-title {
@@ -518,7 +553,6 @@ button.thumbnail {
   color: #d1411e;
 }
 
-
 /* product details */
 
 .product-title-detail {
@@ -541,4 +575,10 @@ button.thumbnail {
   /* border: 2px solid #ccc; */
   border-radius: 10px;
   box-shadow: rgba(45, 46, 46, 0.2) 0px 8px 24px;
+}
+
+/* admin dashboard */
+
+.btn-create {
+  font-size: 1rem;
 }

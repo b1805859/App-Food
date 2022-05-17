@@ -142,7 +142,7 @@ export default function SearchScreen() {
             <ul>
               <li>
                 <Link
-                  className={"all" === category ? "text-bold" : ""}
+                  className={"all" === category ? "text-bold color-text" : "color-texth"}
                   to={getFilterUrl({ category: "all" })}
                 >
                   Any
@@ -151,7 +151,7 @@ export default function SearchScreen() {
               {categories.map((c) => (
                 <li key={c}>
                   <Link
-                    className={c === category ? "text-bold" : ""}
+                    className={c === category ? "text-bold color-text" : "color-texth"}
                     to={getFilterUrl({ category: c })}
                   >
                     {c}
@@ -165,7 +165,7 @@ export default function SearchScreen() {
             <ul>
               <li>
                 <Link
-                  className={"all" === price ? "text-bold" : ""}
+                  className={"all" === price ? "text-bold color-text" : "color-texth"}
                   to={getFilterUrl({ price: "all" })}
                 >
                   Any
@@ -175,7 +175,7 @@ export default function SearchScreen() {
                 <li key={p.value}>
                   <Link
                     to={getFilterUrl({ price: p.value })}
-                    className={p.value === price ? "text-bold" : ""}
+                    className={p.value === price ? "text-bold color-text" : "color-texth"}
                   >
                     {p.name}
                   </Link>
@@ -270,7 +270,7 @@ export default function SearchScreen() {
                     to={getFilterUrl({ page: x + 1 })}
                   >
                     <Button
-                      className={Number(page) === x + 1 ? "text-bold" : ""}
+                      className={Number(page) === x + 1 ? "text-bold bgcolor-text" : "bgcolor-texth"}
                       variant="light"
                     >
                       {x + 1}
