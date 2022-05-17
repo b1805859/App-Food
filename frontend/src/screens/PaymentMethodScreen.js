@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
-import { Helmet } from "react-helmet-async";
-import { useNavigate } from "react-router-dom";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import CheckoutSteps from "../components/CheckoutSteps";
-import { Store } from "../Store";
+import React, { useContext, useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { useNavigate } from 'react-router-dom';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import CheckoutSteps from '../components/CheckoutSteps';
+import { Store } from '../Store';
 
 export default function PaymentMethodScreen() {
   const navigate = useNavigate();
@@ -14,19 +14,19 @@ export default function PaymentMethodScreen() {
   } = state;
 
   const [paymentMethodName, setPaymentMethod] = useState(
-    paymentMethod || "PayPal"
+    paymentMethod || 'Online payment (Paypal)'
   );
 
   useEffect(() => {
     if (!shippingAddress.address) {
-      navigate("/shipping");
+      navigate('/shipping');
     }
   }, [shippingAddress, navigate]);
   const submitHandler = (e) => {
     e.preventDefault();
-    ctxDispatch({ type: "SAVE_PAYMENT_METHOD", payload: paymentMethodName });
-    localStorage.setItem("paymentMethod", paymentMethodName);
-    navigate("/placeorder");
+    ctxDispatch({ type: 'SAVE_PAYMENT_METHOD', payload: paymentMethodName });
+    localStorage.setItem('paymentMethod', paymentMethodName);
+    navigate('/placeorder');
   };
   return (
     <div>
@@ -36,14 +36,14 @@ export default function PaymentMethodScreen() {
           <title>Payment Method</title>
         </Helmet>
         <h1 className="my-3">Payment Method</h1>
-        <Form onSubmit={submitHandler}>
+        <Form onSubmit={submitHandler} className="my-4">
           <div className="mb-3">
             <Form.Check
               type="radio"
               id="PayPal"
-              label={<i class="fab fa-cc-paypal icon-cart"></i>}
-              value="PayPal"
-              checked={paymentMethodName === "PayPal"}
+              label="Online payment (Paypal)"
+              value="Online payment (Paypal)"
+              checked={paymentMethodName === 'Online payment (Paypal)'}
               onChange={(e) => setPaymentMethod(e.target.value)}
             />
           </div>
@@ -51,13 +51,13 @@ export default function PaymentMethodScreen() {
             <Form.Check
               type="radio"
               id="Stripe"
-              label={<i class="fab fa-cc-stripe icon-cart"></i>}
-              value="Stripe"
-              checked={paymentMethodName === "Stripe"}
+              label="Payment on delivery"
+              value="Payment on delivery"
+              checked={paymentMethodName === 'Payment on delivery'}
               onChange={(e) => setPaymentMethod(e.target.value)}
             />
           </div>
-          <div className="mb-3">
+          <div className="mt-5">
             <Button className="btn-cart btn-cart-payment" type="submit">
               Continue
             </Button>
